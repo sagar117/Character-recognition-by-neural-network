@@ -107,7 +107,7 @@ def learn(firstLayer =4, hiddenLayer =7, lastLayer =10, lamda =0.5, mi =0.6):
 			for i in range(hiddenLayer):
 				suma = 0
 				for sd in range(lastLayer):
-					suma = suma + lastPerceptrons[sd].getDelta() * lastPerceptrons[sd].getWeight(i+1)
+					suma += lastPerceptrons[sd].getDelta() * lastPerceptrons[sd].getWeight(i+1)
 
 				hiddenPerceptrons[i].setDelta(suma * lamda * hiddenPerceptrons[i].getOutput() * (1 - hiddenPerceptrons[i].getOutput()))
 
